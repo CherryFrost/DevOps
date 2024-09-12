@@ -2,5 +2,5 @@
 # These can be stated in the 'hosts.yaml' or 'groups.yaml' file if platform, 
 # and credentials are different by device or by assigned group.
 # The Key:Value pairs are called out the same way in the 'hosts.yaml' or 'group.yaml' file 
-username: "andrew"
-password: "admin"
+username: ${USERNAME}
+password: ${PASSWORD}
