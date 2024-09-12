@@ -1,0 +1,33 @@
+---
+
+interfaces:
+    - number: 10
+      ip: "10.0.10.1"
+      mask: "255.255.255.0"
+      name: "AP"
+      state: "no shut"
+    - number: 15
+      ip: "10.0.15.1"
+      mask: "255.255.255.0"
+      name: "Eagle Eye"
+      state: "no shut"
+    - number: 18
+      ip: "10.0.18.1"
+      mask: "255.255.255.0"
+      name: "Net-Mgmt"
+      state: "no shut"
+    - number: 20
+      ip: "10.0.20.1"
+      mask: "255.255.255.0"
+      name: "Employee_Guest"
+      state: "no shut"
+    - number: 22
+      ip: "10.0.12.1"
+      mask: "255.255.255.0"
+      name: "True_Guest"
+      state: "no shut"
+    - number: 66
+      ip: "10.0.66.1"
+      mask: "255.255.255.0"
+      name: "Servers"
+      state: "no shut"
