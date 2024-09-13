@@ -1,0 +1,15 @@
+---
+testbed:
+  credentials:
+    default:
+      username: andrew
+      password: admin
+devices:
+  DevNet-Rtr:
+    os: ios
+    type: eveNG-devnet-router
+    connections:
+      vty:
+        protocol: ssh
+        ip: 192.168.60.150
+
