@@ -5,7 +5,7 @@ from nornir_jinja2.plugins.tasks import template_file
 from nornir_utils.plugins.functions import print_result
 from nornir_utils.plugins.tasks.data import load_yaml
 
-nr = InitNornir(config_file='config.yaml')
+nr = InitNornir(config_file='../config.yaml')
 target_device = nr.filter(state="newyork")
 
 def load_vars(task):
