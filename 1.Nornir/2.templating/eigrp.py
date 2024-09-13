@@ -6,7 +6,7 @@ from nornir_utils.plugins.tasks.data import load_yaml
 
 nr = InitNornir(config_file='config.yaml')
 # Push config to only routers with the following tag of "eigrp=15"
-target_device = nr.filter(eigrp=15)
+target_device = nr.filter(state="newyork")
 
 def load_vars(task):
     data = task.run(task=load_yaml, file=f"./1.host_vars/{task.host}.yaml")
