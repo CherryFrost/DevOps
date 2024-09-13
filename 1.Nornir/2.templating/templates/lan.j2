@@ -1,0 +1,6 @@
+{# Targets router devices in lab #}
+{% for i in host.facts.loopbacks %}
+interface loopback {{ i.num }}
+ip address {{ i.ip }} {{ i.mask }}
+{{ i.state }}
+{% endfor %}

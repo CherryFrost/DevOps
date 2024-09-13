@@ -1,0 +1,47 @@
+---
+
+interfaces:
+    - interface: "Gi0/1"
+      ip: "14.0.0.4"
+      mask: "255.255.255.0"
+      name: "Connection to R1"
+      state: "no shut"
+    - interface: "Gi0/2"
+      ip: "24.0.0.4"
+      mask: "255.255.255.0"
+      name: "Connection to R2"
+      state: "no shutdown"
+loopbacks:
+    - num: 1
+      ip: "4.2.1.1"
+      mask: "255.255.255.255"
+      state: "no shutdown"
+    - num: 2
+      ip: "4.3.1.1"
+      mask: "255.255.255.255"
+      state: "no shutdown"
+    - num: 3
+      ip: "4.4.1.1"
+      mask: "255.255.255.255"
+      state: "no shutdown"
+    - num: 4
+      ip: "4.5.1.1"
+      mask: "255.255.255.255"
+      state: "no shutdown"
+ospf:
+    ospf_rid: "4.4.4.4"
+    ospf_process: "4"
+    ospf_networks:
+        - ip: "24.0.0.4"
+          wildcard: "0.0.0.255"
+          area: "24"
+
+bgp:
+    as: 200
+    router_id: "4.4.4.4"
+    iBGP:
+        - dest_ip: "192.168.60.175"
+          dest_as: "200"
+    networks:
+        - network: "4.3.1.1"
+          mask: "255.255.255.255"

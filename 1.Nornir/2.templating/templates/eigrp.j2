@@ -1,0 +1,5 @@
+{# Targets routers in lab #}
+router eigrp {{ host.facts.eigrp.as }}
+{% for i in host.facts.eigrp.networks %}
+network {{ i.network }} {{ i.wildcard }}
+{% endfor %}

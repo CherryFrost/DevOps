@@ -1,0 +1,13 @@
+---
+
+inventory:
+    plugin: SimpleInventory
+    options: 
+        host_file: "hosts.yaml"
+        group_file: "groups.yaml"
+        defaults_file: "defaults.yaml"
+
+runner:
+    plugin: threaded # 'threaded' is concurrent, 'serial' is sequential
+    options:
+        num_workers: 8 # defines how many threads nornir should utilize for sessions ex: 50 devices would be 50, the higher the number the more demand on resources

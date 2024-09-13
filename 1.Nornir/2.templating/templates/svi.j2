@@ -1,0 +1,7 @@
+{% for vlan in host.facts.interfaces %}
+interface vlan {{ vlan.number }}
+ip address {{ vlan.ip }} {{ vlan.mask }}
+description {{ vlan.name }}
+{{ vlan.state }}
+
+{% endfor %}

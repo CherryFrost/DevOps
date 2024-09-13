@@ -1,0 +1,7 @@
+{# Targets routers in lab #}
+{% for gig_intf in host.facts.interfaces %}
+interface {{ gig_intf.interface }}
+description {{ gig_intf.name}}
+ip address {{ gig_intf.ip }} {{ gig_intf.mask }}
+{{ gig_intf.state }}
+{% endfor %}

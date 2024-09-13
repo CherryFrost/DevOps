@@ -1,0 +1,11 @@
+{# Targets routers in lab #}
+router bgp {{ host.facts.bgp.as }}
+bgp router-id {{ host.facts.bgp.router_id}}
+
+{% for i in host.facts.bgp.iBGP %}
+neighbor {{ i.dest_ip }} remote-as {{ i.dest_as }}
+{% endfor %}
+
+{% for i in host.facts.bgp.networks %}
+network {{ i.network }} mask {{ i.mask }}
+{% endfor %}

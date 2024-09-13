@@ -1,0 +1,51 @@
+---
+
+interfaces:
+    - interface: "Gi0/2"
+      ip: "15.0.0.5"
+      mask: "255.255.255.0"
+      name: "Connection to R1"
+      state: "no shut"
+    - interface: "Gi0/3"
+      ip: "35.0.0.5"
+      mask: "255.255.255.0"
+      name: "Connection to R3"
+      state: "no shut"
+loopbacks:
+    - num: 1
+      ip: "5.2.1.1"
+      mask: "255.255.255.255"
+      state: "no shutdown"
+    - num: 2
+      ip: "5.3.1.1"
+      mask: "255.255.255.255"
+      state: "no shutdown"
+    - num: 3
+      ip: "5.4.1.1"
+      mask: "255.255.255.255"
+      state: "no shutdown"
+    - num: 4
+      ip: "5.5.1.1"
+      mask: "255.255.255.255"
+      state: "no shutdown"
+ospf:
+    ospf_rid: "5.5.5.5"
+    ospf_process: "5"
+    ospf_networks:
+        - ip: "25.0.0.2"
+          wildcard: "0.0.0.255"
+          area: "0"
+        - ip: "15.0.0.5"
+          wildcard: "0.0.0.255"
+          area: "15"
+        - ip: "35.0.0.5"
+          wildcard: "0.0.0.255"
+          area: "35"
+
+eigrp:
+    as: 15
+    networks:
+        - network: "15.0.0.5"
+          wildcard : "0.0.0.0"
+        - network: "5.5.5.5"
+          wildcard: "0.0.0.0"

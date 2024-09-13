@@ -1,0 +1,6 @@
+{# Targets routers in lab #}
+router ospf {{ host.facts.ospf.ospf_process }}
+router-id {{ host.facts.ospf.ospf_rid }}
+{% for n in host.facts.ospf.ospf_networks %}
+network {{ n.ip }} {{ n.wildcard }} area {{ n.area }}
+{% endfor %}
