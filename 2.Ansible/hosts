@@ -1,0 +1,38 @@
+[usa]
+192.168.60.160 # R1/NewYork
+192.168.60.170 # R2/Montana
+192.168.60.180 # R3/Virginia
+192.168.60.190 # R4/Texas
+192.168.60.200 # R5/Arizona
+192.168.60.210 # R6/Florida
+
+[north]
+192.168.60.160
+192.168.60.170
+192.168.60.180
+
+[south]
+192.168.60.190
+192.168.60.200
+192.168.60.210
+
+[east]
+192.168.60.160
+192.168.60.180
+192.168.60.210
+
+[west]
+192.168.60.170
+192.168.60.190
+192.168.60.200
+
+[cat9k]
+192.168.60.220
+
+[all:vars]
+ansible_connection=network_cli
+ansible_user=andrew
+ansible_password=admin
+ansible_become=yes
+ansible_become_method=enable
+ansible_network_os=ios
