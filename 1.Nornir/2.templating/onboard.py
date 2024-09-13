@@ -6,7 +6,7 @@ from nornir_utils.plugins.tasks.data import load_yaml
 
 nr = InitNornir(config_file='config.yaml')
 
-target_device = nr.filter(state="newyork")
+target_device = nr.filter(country="usa")
 
 
 def load_vars(task):
