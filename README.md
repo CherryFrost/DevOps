@@ -1,6 +1,6 @@
 # DevOps
-CICD Pipelines for Cisco Network Automation.
+CICD Pipelines for NetDevOps.
 
-This is a code repo for practicing in a lab environment and should not be used for production purposes!
+This is a fictious environment and should NOT be used for non-fictional purposes!
 
 -Cherry Frost
