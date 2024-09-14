@@ -1,0 +1,10 @@
+stages:
+  - build
+
+shell_command:
+  stage: build
+  script:
+    - echo "Welcome to my first project"
+    - echo "This was built with GitLab" > myfile.txt
+    - cat myfile.txt
+    - cat vm.cfg

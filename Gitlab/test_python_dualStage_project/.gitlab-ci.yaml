@@ -1,0 +1,16 @@
+stages:
+  - test
+  - build
+
+lab_testing:
+    stage: test
+    script:
+      - pip3 install rich
+      - echo "I am validating code in my test environment"
+      - python3 test.py
+    
+production:
+    stage: build
+    script:
+      - echo "Test passed, deploying to production..."
+      - python3 build.py
