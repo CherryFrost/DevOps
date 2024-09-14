@@ -1,0 +1,7 @@
+router bgp {{ BGP.ASN }}
+
+{% for nbor in BGP.peers %}
+neighbor {{ nbor.neighbor }} remote-as {{ nbor.peer_asn }}
+neighbor {{ nbor.neighbor }} update-source Loopback100
+neighbor {{ nbor.neighbor }} ebgp-multihop 2
+{% endfor %}

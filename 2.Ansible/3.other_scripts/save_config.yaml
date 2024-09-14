@@ -1,0 +1,18 @@
+---
+  - name: capture show output
+    hosts: usa
+    gather_facts: yes
+    connection: network_cli
+
+    tasks: 
+
+      - name: show run
+        ios_command:
+          commands:
+          - show run
+        register: config
+
+      - name: save output to local directory
+        copy:
+          content: "{{ config.stdout | replace('\\n', '\n') }}"
+          dest: "inventory/DevNetLab/{{ ansible_net_hostname }}_{{ lookup('pipe', 'date +%Y%m%d%H%M%S') }}.ios"

@@ -1,0 +1,32 @@
+---
+
+- name: "Configure BGP peering between R1 & R2"
+  hosts: "usa"
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+    - name: "Configure Loopback Interface for BGP peering"
+      cisco.ios.ios_config:
+        src: "loopback.j2"
+
+    - name: "Configure Eigrp 100 for loopback reachability"
+      cisco.ios.ios_config:
+        src: "eigrp.j2"
+
+    - name: "Configure eBGP Peering"
+      cisco.ios.ios_config:
+        src: "bgp.j2"
+
+    - name: "Activating 10 second delay..."
+      ansible.builtin.pause:
+        seconds: 10
+
+    - name: Verify BGP Peering
+      cisco.ios.ios_command:
+        commands: sho ip bgp summary
+      register: bgp_peering
+
+    - name: Verify Output
+      debug:
+        var: bgp_peering.stdout_lines[0]
