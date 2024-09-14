@@ -7,7 +7,7 @@ from genie.utils import Dq
 # Load the Testbed File
 tb = loader.load('inventory/testbed.yml')
 # Assign the DevNetRouter device to a variable
-vIOS = tb.devices['DevNet-Rtr']
+vIOS = tb.devices['R1-NewYork']
 # Connect to the DevNet Router
 vIOS.connect()
 x = pprint(vIOS.parse('show ip route'))

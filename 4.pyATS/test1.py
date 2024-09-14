@@ -6,9 +6,9 @@ from genie.utils import Dq
 
 # Load the Testbed File
 tb = loader.load('inventory/testbed.yml')
-# Assign the DevNetRouter device to a variable
-vIOS = tb.devices['DevNet-Rtr']
-# Connect to the DevNet Router
+# Assign the R1-NewYork device to a variable
+vIOS = tb.devices['R1-NewYork']
+# Connect to the NewYork Router
 vIOS.connect()
 
 vIOS.configure('''

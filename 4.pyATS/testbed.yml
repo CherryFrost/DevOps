@@ -5,11 +5,11 @@ testbed:
       username: andrew
       password: admin
 devices:
-  DevNet-Rtr:
+  R1-NewYork:
     os: ios
-    type: eveNG-devnet-router
+    type: vIOS-Router
     connections:
       vty:
         protocol: ssh
-        ip: 192.168.60.150
+        ip: 192.168.60.160
 
