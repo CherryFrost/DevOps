@@ -1,3 +1,4 @@
+import os
 from nornir import InitNornir
 from nornir_scrapli.tasks import send_configs
 from nornir_utils.plugins.functions import print_result
@@ -6,6 +7,8 @@ from nornir.core.filter import F
 from nornir_utils.plugins.tasks.data import load_yaml
 
 nr = InitNornir(config_file='config.yaml')
+nr.inventory.defaults.username = os.getenv("SSH_USERNAME")
+nr.inventory.defaults.password = os.getenv("SSH_PASSWORD")
 
 target_device = nr.filter(F(groups__contains="Mgmt_group"))
 
