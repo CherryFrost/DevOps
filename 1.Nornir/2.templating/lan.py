@@ -1,4 +1,5 @@
 # Running on Jenkins!
+import os
 from nornir import InitNornir
 from nornir_scrapli.tasks import send_configs
 from nornir_jinja2.plugins.tasks import template_file
@@ -6,6 +7,9 @@ from nornir_utils.plugins.functions import print_result
 from nornir_utils.plugins.tasks.data import load_yaml
 
 nr = InitNornir(config_file='config.yaml')
+nr.inventory.defaults.username = os.getenv("SSH_USERNAME")
+nr.inventory.defaults.password = os.getenv("SSH_PASSWORD")
+
 target_device = nr.filter(country="usa")
 
 def load_vars(task):

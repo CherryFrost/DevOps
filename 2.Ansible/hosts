@@ -31,8 +31,8 @@
 
 [all:vars]
 ansible_connection=network_cli
-ansible_user=andrew
-ansible_password=admin
+ansible_user=${SSH_USERNAME}
+ansible_password=${SSH_PASSWORD}
 ansible_become=yes
 ansible_become_method=enable
 ansible_network_os=ios
