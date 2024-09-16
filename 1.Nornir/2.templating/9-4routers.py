@@ -1,3 +1,4 @@
+import os
 from nornir import InitNornir
 from nornir_scrapli.tasks import send_configs
 from nornir_jinja2.plugins.tasks import template_file
@@ -6,9 +7,12 @@ from nornir_utils.plugins.tasks.data import load_yaml
 
 # Initialize nornir from config.yaml
 nr = InitNornir(config_file='config.yaml')
+nr.inventory.defaults.username = os.getenv("SSH_USERNAME")
+nr.inventory.defaults.password = os.getenv("SSH_PASSWORD")
 
 # Filter only routers in lab
 usa_routers = nr.filter(country="usa")
+
 
 # Confirm filtering is targeting the correct devices - Uncomment line 14 to test
 #print(usa_routers.inventory.hosts.keys())

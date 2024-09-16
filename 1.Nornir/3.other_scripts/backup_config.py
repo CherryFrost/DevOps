@@ -1,3 +1,4 @@
+import os
 from nornir import InitNornir # <-- This turns the nornir engine on
 from nornir_scrapli.tasks import send_command # <-- Send show commands utilizing scrapli
 from nornir_utils.plugins.functions import print_result # <-- Print our results to the terminal
@@ -6,6 +7,8 @@ from datetime import date
 import pathlib
 
 nr = InitNornir(config_file='config.yaml')
+nr.inventory.defaults.username = os.getenv("SSH_USERNAME")
+nr.inventory.defaults.password = os.getenv("SSH_PASSWORD")
 
 def backup_config(task):
     r = task.run(task=send_command, command="show run")

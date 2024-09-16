@@ -1,8 +1,11 @@
+import os
 from nornir import InitNornir # <-- This turns the nornir engine on
 from nornir_scrapli.tasks import send_command # <-- Send show commands utilizing scrapli
 from nornir_utils.plugins.functions import print_result # <-- Print our results to the terminal
 
 nr = InitNornir(config_file='config.yaml')
+nr.inventory.defaults.username = os.getenv("SSH_USERNAME")
+nr.inventory.defaults.password = os.getenv("SSH_PASSWORD")
 
 while True:
     # Prompt the user for a command
