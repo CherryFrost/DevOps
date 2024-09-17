@@ -1,0 +1,14 @@
+---
+- name: IOS Playbook to create Loopback
+  hosts: ny
+  gather_facts: no
+
+  tasks:
+    - name: Gather L3 interfaces resource and minimal legacy facts
+      cisco.ios.ios_facts:
+        gather_subset: min
+      register: intf
+
+    - name: Display hostname fact
+      debug:
+        msg: "The hostname is: {{ intf.ansible_facts.ansible_net_hostname }}"

@@ -1,0 +1,10 @@
+---
+- name: "Configure Loopback 100 on R1"
+  hosts: "ny"
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+    - name: "Configure Loopback 100"
+      cisco.ios.ios_config:
+        src: "loopback.j2"

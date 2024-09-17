@@ -1,0 +1,12 @@
+---
+- name: IOS Playbook to create Loopback
+  hosts: ny
+  gather_facts: no
+
+  tasks:
+    - name: Show interface
+      cisco.ios.ios_banner:
+        banner: "motd"
+        multiline_delimiter: "x"
+        text: "Today is Tuesday. Tonight is dinner with Zach & Abby, and Leeann!"
+        state: "present"

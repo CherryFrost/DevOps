@@ -1,0 +1,14 @@
+---
+- name: IOS Playbook to configure local user
+  hosts: ny
+  gather_facts: no
+
+  tasks:
+    - name: Define User
+      cisco.ios.ios_user:
+        users:
+          - name: ansible_admin
+            configured_password: supersecret
+            privilege: 15
+        state: "present"
+      no_log: true

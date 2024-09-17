@@ -1,0 +1,22 @@
+---
+BGP:
+  ASN: "100"
+  peers:
+    - neighbor: "200.200.200.200"
+      peer_asn: "200"
+    - neighbor: "210.210.210.210"
+      peer_asn: "300"
+
+ospf:
+  ospf_rid: "1.1.1.1"
+  ospf_process: "1"
+  ospf_networks:
+    - ip: "15.0.0.1"
+      wildcard: "0.0.0.255"
+      area: "15"
+    - ip: "1.2.0.1"
+      wildcard: "0.0.0.0"
+      area: "15"
+    - ip: "1.3.0.1"
+      wildcard: "0.0.0.0"
+      area: "15"

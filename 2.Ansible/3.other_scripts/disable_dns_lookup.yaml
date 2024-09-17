@@ -1,0 +1,10 @@
+---
+- name: Prevent DNS Lookup on Lab routers
+  hosts: ny
+  gather_facts: no
+
+  tasks:
+    - name: Disable DNS Lookup
+      cisco.ios.ios_system:
+        lookup_enabled: false
+        state: "present"
