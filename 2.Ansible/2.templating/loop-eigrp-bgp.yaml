@@ -1,7 +1,7 @@
 ---
 
 - name: "Configure BGP peering between R1 & R2"
-  hosts: "usa"
+  hosts: "ny"
   gather_facts: false
   connection: network_cli
 

@@ -1,11 +1,14 @@
 ---
-
-- name: "Loop test"
-  hosts: us-1
-  gather_facts: true
-  connection: network_cli
+- name: IOS Playbook to create Loopback
+  hosts: ny
+  gather_facts: no
 
   tasks:
-    - name: "Loop through IP info"
+    - name: Show interface
+      cisco.ios.ios_command:
+        commands: sho run interface g0/0
+      register: vlan204
+
+    - name: Display vlan204 variable
       debug:
-        msg: "{{ ansible_net_hostname }} has an IP address"
+        var: vlan204.stdout_lines[0]
