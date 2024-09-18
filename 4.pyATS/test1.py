@@ -4,8 +4,8 @@ from genie.testbed import load
 from pprint import pprint
 from genie.utils import Dq
 
-# Load the Testbed File
-tb = loader.load('inventory/testbed.yml')
+# # Load the Testbed File
+tb = loader.load('testbed.yml')
 # Assign the R1-NewYork device to a variable
 vIOS = tb.devices['R1-NewYork']
 # Connect to the NewYork Router
