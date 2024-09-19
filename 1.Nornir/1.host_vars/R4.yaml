@@ -32,9 +32,18 @@ ospf:
     ospf_rid: "4.4.4.4"
     ospf_process: "4"
     ospf_networks:
+        - ip: "14.0.0.4"
+          wildcard: "0.0.0.255"
+          area: "0"
         - ip: "24.0.0.4"
           wildcard: "0.0.0.255"
-          area: "24"
+          area: "0"
+        - ip: "4.2.1.1"
+          wildcard: "0.0.0.0"
+          area: "0"
+        - ip: "4.3.1.1"
+          wildcard: "0.0.0.0"
+          area: "0"
 
 bgp:
     as: 200

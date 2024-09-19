@@ -6,7 +6,7 @@ testbed = load('testbed.yaml')
 device_one = testbed.devices['R1-NewYork']
 
 # minimize log output on screen when running test
-device_one.connect(log_stdout=False)
+device_one.connect()
 
 parsed_intf = device_one.parse("show ip int brief")
 mgmt_ipAddr = parsed_intf['interface']['GigabitEthernet0/0']['ip_address']

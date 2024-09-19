@@ -5,42 +5,42 @@ testbed:
       username: "andrew"
       password: "admin"
 devices:
-  R1-NewYork:
+  NewYork:
     os: ios
     type: vIOS-Router
     connections:
       vty:
         protocol: ssh
         ip: 192.168.60.160
-  R2-Montana:
+  Montana:
     os: ios
     type: vIOS-Router
     connections:
       vty:
         protocol: ssh
         ip: 192.168.60.170
-  R3-Virginia:
+  Virginia:
     os: ios
     type: vIOS-Router
     connections:
       vty:
         protocol: ssh
         ip: 192.168.60.180
-  R4-Texas:
+  Texas:
     os: ios
     type: vIOS-Router
     connections:
       vty:
         protocol: ssh
         ip: 192.168.60.190
-  R5-Arizona:
+  Arizona:
     os: ios
     type: vIOS-Router
     connections:
       vty:
         protocol: ssh
         ip: 192.168.60.200
-  R6-Florida:
+  Florida:
     os: ios
     type: vIOS-Router
     connections:

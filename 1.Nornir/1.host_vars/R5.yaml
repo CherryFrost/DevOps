@@ -32,20 +32,23 @@ ospf:
     ospf_rid: "5.5.5.5"
     ospf_process: "5"
     ospf_networks:
-        - ip: "25.0.0.2"
-          wildcard: "0.0.0.255"
-          area: "0"
         - ip: "15.0.0.5"
           wildcard: "0.0.0.255"
-          area: "15"
+          area: "0"
         - ip: "35.0.0.5"
           wildcard: "0.0.0.255"
-          area: "35"
+          area: "0"
+        - ip: "5.2.1.1"
+          wildcard: "0.0.0.0"
+          area: "0"
+        - ip: "5.3.1.1"
+          wildcard: "0.0.0.0"
+          area: "0"
 
 eigrp:
     as: 15
     networks:
         - network: "15.0.0.5"
-          wildcard: "0.0.0.0"
+          wildcard : "0.0.0.0"
         - network: "5.5.5.5"
           wildcard: "0.0.0.0"
